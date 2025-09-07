@@ -94,7 +94,7 @@ If you expand beyond simulation/public datasets:
 * Never distribute raw logs with sensitive info.
 * Always include a clear **Ethics Statement** in public write-ups.
 
-Suggested ethics snippet (copy-paste for papers):
+Suggested ethics snippet :
 
 > All active experiments were performed on infrastructure controlled by the researchers or on cloud instances explicitly provisioned for the study. No experiments probed or interfered with third-party networks. All survey instruments were anonymous and collected no personally identifying information.
 
