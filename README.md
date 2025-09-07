@@ -8,13 +8,13 @@ Author: Aditya Diwan
 
 ---
 
-#Quick Summary
+Quick Summary
 
 A step-by-step, copy-pasteable teaching repo that helps students learn how to conduct safe, reproducible, and ethical research — using **censorship circumvention** as an illustrative case.
 
 ---
 
-#Why This Repo Exists
+Why This Repo Exists
 
 Many students know programming but don’t know how to structure **research end-to-end**. This repo shows the **full research pipeline**:
 
@@ -28,7 +28,7 @@ It’s intentionally **non-invasive**: all examples either simulate censorship l
 
 ---
 
-#What This Repo Contains (Educational Artifacts)
+What This Repo Contains (Educational Artifacts)
 
 ```
 /paper/                 # Paper skeleton and example paragraphs (LaTeX & Markdown)
@@ -56,7 +56,7 @@ It’s intentionally **non-invasive**: all examples either simulate censorship l
 
 ---
 
-#How To Use This Repo (3 Quick Steps)
+How To Use This Repo (3 Quick Steps)
 
 1. Clone the repo**
 ```
