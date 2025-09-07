@@ -3,7 +3,7 @@
 Author: Aditya Diwan
 Repo Purpose: This repository is an educational template — it explains how to do research (design experiments, run safe simulations, draft papers, create reproducible artifacts) using censorship circumvention as an example topic.
 
-⚠️ Important: This repo does **NOT** contain or promote active probing of third-party networks. It provides templates, checklists, example documents, and safe simulated experiments only.
+⚠️ *Important: This repo does **NOT** contain or promote active probing of third-party networks. It provides templates, checklists, example documents, and safe simulated experiments only.*
 
 ---
 
