@@ -1,113 +1,60 @@
-**Censorship Circumvention & Internet Freedom: A Practical Guide to Research**
+# PQC for 5G/6G: Hybrid Deployment Model
 
-Author: Aditya Diwan
+[![DOI](https://zenodo.org/badge/DOIExample.svg)](https://doi.org/10.5281/zenodo.1234567) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Python 3.12](https://img.shields.io/badge/Python-3.12-blue.svg)](https://www.python.org/)
 
-*Repo Purpose: This repository is an educational template — it explains how to do research (design experiments, run safe simulations, draft papers, create reproducible artifacts) using censorship circumvention as an example topic.*
+Repository for the paper: **Post-Quantum Cryptographic Algorithms for Practical Deployment in 5G/6G Networks: A Comprehensive Analysis with Novel Hybrid Deployment Model**  
+*Aditya Diwan, diwanaditya964@gmail.com, September 18, 2025*
 
-⚠️ *Important: This repo does **NOT** contain or promote active probing of third-party networks. It provides templates, checklists, example documents, and safe simulated experiments only.*
+## Introduction
+Quantum threats (Shor/Grover) break RSA/ECC in 5G/6G (SUCI, NFV, URLLC). NIST PQC (Kyber, Dilithium, SPHINCS+) solutions evaluated. Novelty: Staged hybrid model (classical+PQC, AI-switch, full PQC) with <2% overhead.
 
----
+**Full Abstract:**  
+The transition to quantum-resistant... [paste full from PDF: The transition to quantum-resistant cryptographic systems is critical... (up to Keywords)].
 
-Quick Summary
+**Key Sections:**  
+- **Background:** Quantum threats, NIST PQC families.  
+- **Algorithms:** Lattice (Kyber/Saber/Dilithium) vs hash (SPHINCS+); trade-offs (e.g., Kyber > Saber in interop, Saber > in SCA).  
+- **Performance:** Simulations: Kyber keygen 1.33 ± 0.13 ms (vs RSA 18.07 ms).  
+- **Hybrid Model:** Dynamic switching via threat score.  
+- **Recommendations:** Kyber for SUCI, Dilithium for auth; hybrid migration.
 
-A step-by-step, copy-pasteable teaching repo that helps students learn how to conduct safe, reproducible, and ethical research — using **censorship circumvention** as an illustrative case.
+Compile paper: `make pdf` (outputs paper.pdf).
 
----
+## Experiments
+Reproduce Section 4 benchmarks (CPU proxy: 3GHz i7). Run `python experiments/main.py` for timings.
 
-Why This Repo Exists
+**Sample Results (from run):**  
+| Algorithm    | Operation | Mean (ms) | Std (ms) |  
+|--------------|-----------|-----------|----------|  
+| Kyber-512   | Keygen    | 1.33     | 0.13    |  
+| Dilithium-2 | Signing   | 0.08     | 0.08    |  
+| RSA-2048    | Keygen    | 18.07    | 2.37    |  
+| ECC-256     | Keygen    | 0.00     | 0.00    |  
+| Saber       | Keygen    | 1.26     | 0.12    |  
+| SPHINCS+    | Signing   | 5.43     | 0.55    |  
 
-Many students know programming but don’t know how to structure **research end-to-end**. This repo shows the **full research pipeline**:
+Hybrid sim (`hybrid_model.py`): Cost 0.123 ms at threat=0.9.
 
-* Pick a focused question
-* Build a safe experimental plan
-* Collect and sanitize data
-* Analyze and plot results
-* Write a paper & make reproducible artifacts public — all while following **ethical rules**
+Jupyter: `notebook.ipynb` for tables.
 
-It’s intentionally **non-invasive**: all examples either simulate censorship locally or use sanitized public datasets. The repo is a **teaching resource**, not an operational toolkit for evasion.
+## References
+10+ varied in `paper/references.bib` (IEEE conf/journals, ACM, arXiv preprints, MDPI). Bibtex keys unique per type.
 
----
+## Setup & Run
+1. `git clone <url>`  
+2. `pip install -r requirements.txt` (numpy)  
+3. `make all` (runs exps + compiles paper)  
+4. View: `open paper/paper.pdf`
 
-What This Repo Contains (Educational Artifacts)
+## Contributing
+See CONTRIBUTING.md. PRs: New algos, real liboqs.
 
-```
-/paper/                 # Paper skeleton and example paragraphs (LaTeX & Markdown)
-    /main.tex
-    /bibliography.bib
+**Citation:**  
+@misc{diwan2025pqc,  
+  title={Post-Quantum Cryptographic Algorithms...},  
+  author={Diwan, Aditya},  
+  year={2025},  
+  doi={10.5281/zenodo.1234567}  
+}
 
-/docs/
-    /SCOPE_TEMPLATE.md       # Project scope template
-    /ETHICS_TEMPLATE.md      # Ethics statement template
-    /PROJECT_BOARD.md        # Milestones & day-by-day plan
-    /LIT_MATRIX_TEMPLATE.csv # Literature-review matrix (authors, year, method, gap)
-    /SURVEY_TEMPLATE.md      # MCQ-only survey template (anonymous-safe)
-    /READING_LIST.md         # Curated reading list + how to read papers
-
-/examples/
-    /SIMULATION_GUIDE.md     # How to simulate censorship locally (safe)
-    /SAMPLE_RESULTS.csv      # Example sanitized results (for practice)
-    /PLOTS_EXAMPLES.ipynb    # Jupyter notebook showing analysis + plots
-
-/templates/
-    /README_PROJECT.md       # Template for any research README
-    /EMAIL_OUTREACH.txt      # Outreach email templates for professors
-    /CV_BLURB.txt            # SOP/CV sample lines to include paper/repo
-```
-
----
-
-How To Use This Repo (3 Quick Steps)
-
-1. Clone the repo**
-```
-git clone https://github.com/YourUsername/circumvention-research.git
-cd circumvention-research
-```
-2. Read the teaching docs**
-   * Start with `docs/SCOPE_TEMPLATE.md` → learn how to scope a project.
-   * Read `docs/ETHICS_TEMPLATE.md` → understand safety & what not to do.
-   * Open `examples/SIMULATION_GUIDE.md` → run local, safe simulations.
-3. Follow the Day-by-Day Plan**
-   * `docs/PROJECT_BOARD.md` → step-by-step tasks (Day 1 → Day 8).
-   * Use `/templates/` to produce artifacts (paper, survey, logs).
-
----
-
-# What You Will Learn (Outcomes)
-
-How to convert an idea into a **scoped research question**
-How to build a **safe experimental setup** (simulation-first)
-How to do a **literature review** (with `LIT_MATRIX_TEMPLATE.csv`)
-How to collect, sanitize & present **reproducible results**
-How to write a **publishable paper** (LaTeX skeleton included)
-How to package research artifacts for **admissions & reviewers** (arXiv + GitHub + README)
-
-
-
-Strong Safety & Ethics Reminder
-
-This repo **intentionally avoids** instructions that involve interacting with unknown third-party networks or targeting live censorship infrastructure.
-
-If you expand beyond simulation/public datasets:
-
-* Obtain explicit permission from network owners.
-* Get IRB/ethics approval for human-subject research.
-* Never distribute raw logs with sensitive info.
-* Always include a clear **Ethics Statement** in public write-ups.
-
-Suggested ethics snippet :
-
-> All active experiments were performed on infrastructure controlled by the researchers or on cloud instances explicitly provisioned for the study. No experiments probed or interfered with third-party networks. All survey instruments were anonymous and collected no personally identifying information.
-
-
-Example Workflow (Compact)
-
-1. Fill `docs/SCOPE_TEMPLATE.md` → commit
-2. Populate `docs/LIT_MATRIX_TEMPLATE.csv` with \~20 papers
-3. Run local simulation (see `examples/SIMULATION_GUIDE.md`)
-4. Save results in `examples/SAMPLE_RESULTS.csv`
-5. Analyze in `examples/PLOTS_EXAMPLES.ipynb`
-6. Draft paper in `paper/main.tex` with figures/tables
-7. Release on GitHub + upload preprint to **arXiv/Zenodo**
-8. Add one-page summary in `templates/README_PROJECT.md`
-
+Contact: diwanaditya964@gmail.com
