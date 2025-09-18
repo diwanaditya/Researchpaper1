@@ -46,8 +46,8 @@ Reproduce Section 4 benchmarks (CPU proxy: 3GHz i7). Run `python experiments/mai
 ## Setup & Run
 1. `git clone github.com/diwanaditya/pqc-5g6g-hybrid`  
 2. `pip install -r requirements.txt` (numpy)  
-3. `make all` (runs exps + compiles paper)  
-4. View: `open paper/paper.pdf`
+3. `cd experiments` 
+4. `python main.py`
 
 ## Contributing
 See CONTRIBUTING.md. PRs: New algos, real liboqs.
