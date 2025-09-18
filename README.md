@@ -18,7 +18,7 @@ The transition to quantum-resistant... [paste full from PDF: The transition to q
 - **Hybrid Model:** Dynamic switching via threat score.  
 - **Recommendations:** Kyber for SUCI, Dilithium for auth; hybrid migration.
 
-Compile paper: `paper/paper.pdf`
+Compile paper: `paper/paper.tex`
 ## Experiments
 Reproduce Section 4 benchmarks (CPU proxy: 3GHz i7). Run `python experiments/main.py` for timings.
 
