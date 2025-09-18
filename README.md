@@ -24,24 +24,28 @@ Compile paper: `make pdf` (outputs paper.pdf).
 Reproduce Section 4 benchmarks (CPU proxy: 3GHz i7). Run `python experiments/main.py` for timings.
 
 **Sample Results (from run):**  
-| Algorithm    | Operation | Mean (ms) | Std (ms) |  
-|--------------|-----------|-----------|----------|  
-| Kyber-512   | Keygen    | 1.33     | 0.13    |  
-| Dilithium-2 | Signing   | 0.08     | 0.08    |  
-| RSA-2048    | Keygen    | 18.07    | 2.37    |  
-| ECC-256     | Keygen    | 0.00     | 0.00    |  
-| Saber       | Keygen    | 1.26     | 0.12    |  
-| SPHINCS+    | Signing   | 5.43     | 0.55    |  
+| Algorithm    | Operation | Mean Time (ms) | Std Dev (ms) | Notes |
+|--------------|-----------|----------------|--------------|-------|
+| Kyber-512   | Keygen    | 1.30          | 0.17        | Excellent for SUCI; NTT-optimized. |
+| Dilithium-2 | Signing   | 0.04          | 0.03        | Competitive for auth/handovers; rejection sampling. |
+| RSA-2048    | Keygen    | 5.89          | 2.52        | Baseline; quantum-vulnerable, slow. |
+| ECC-256     | Keygen    | 0.00          | 0.00        | Fast classical; but Shor-broken. |
+| Saber       | Keygen    | 1.24          | 0.16        | SCA-resistant edge over Kyber; LWR-based. |
+| SPHINCS+    | Signing   | 2.61          | 0.35        | Conservative hash-based; large sigs limit URLLC. |
 
-Hybrid sim (`hybrid_model.py`): Cost 0.123 ms at threat=0.9.
-
-Jupyter: `notebook.ipynb` for tables.
+## Raw Outputs
+- Kyber-512 Keygen: 1.30 ± 0.17 ms  
+- Dilithium-2 Signing: 0.04 ± 0.03 ms  
+- RSA-2048 Keygen: 5.89 ± 2.52 ms  
+- ECC-256 Keygen: 0.00 ± 0.00 ms  
+- Saber Keygen: 1.24 ± 0.16 ms  
+- SPHINCS+ Signing: 2.61 ± 0.35 ms
 
 ## References
 10+ varied in `paper/references.bib` (IEEE conf/journals, ACM, arXiv preprints, MDPI). Bibtex keys unique per type.
 
 ## Setup & Run
-1. `git clone <url>`  
+1. `git clone github.com/diwanaditya/pqc-5g6g-hybrid`  
 2. `pip install -r requirements.txt` (numpy)  
 3. `make all` (runs exps + compiles paper)  
 4. View: `open paper/paper.pdf`
