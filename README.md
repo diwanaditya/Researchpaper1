@@ -44,7 +44,7 @@ Reproduce Section 4 benchmarks (CPU proxy: 3GHz i7). Run `python experiments/mai
 10+ varied in `paper/references.bib` (IEEE conf/journals, ACM, arXiv preprints, MDPI). Bibtex keys unique per type.
 
 ## Setup & Run
-1. `git clone github.com/diwanaditya/pqc-5g6g-hybrid`  
+1. `git clone [github.com/diwanaditya/pqc-5g6g-hybrid](https://github.com/diwanaditya/pqc-5g6g-hybrid)`  
 2. `pip install -r requirements.txt` (numpy)  
 3. `cd experiments` 
 4. `python main.py`
