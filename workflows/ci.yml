@@ -1,0 +1,26 @@
+name: CI - Build & Test
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+    - name: Install Deps
+      run: |
+        pip install -r requirements.txt
+        sudo apt update && sudo apt install texlive-latex-extra texlive-bibtex-extra
+    - name: Run Experiments
+      run: cd experiments && python main.py && python hybrid_model.py
+    - name: Compile Paper
+      run: cd paper && make pdf
+    - name: Upload PDF
+      uses: actions/upload-artifact@v4
+      with:
+        name: paper-pdf
+        path: paper/paper.pdf
