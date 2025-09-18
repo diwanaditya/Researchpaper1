@@ -1,6 +1,6 @@
 # PQC for 5G/6G: Hybrid Deployment Model
 
-[![DOI](https://zenodo.org/badge/DOIExample.svg)](https://doi.org/10.5281/zenodo.1234567) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Python 3.12](https://img.shields.io/badge/Python-3.12-blue.svg)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Python 3.12](https://img.shields.io/badge/Python-3.12-blue.svg)](https://www.python.org/)
 
 Repository for the paper: **Post-Quantum Cryptographic Algorithms for Practical Deployment in 5G/6G Networks: A Comprehensive Analysis with Novel Hybrid Deployment Model**  
 *Aditya Diwan, diwanaditya964@gmail.com, September 18, 2025*
